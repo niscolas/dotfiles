@@ -1,0 +1,21 @@
+configuration {
+  combi-modi: "window,drun,run";
+
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+
+  icon-theme: "Papirus";
+  modi: "combi#power:~/dotfiles/rofi/scripts/powermenu.sh#xrandr layout:~/dotfiles/rofi/scripts/xrandrlayoutmenu.sh";
+
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+
+  sidebar-mode: true;
+  show-icons: true;
+}
+
+@theme "gruvbox.rasi"
