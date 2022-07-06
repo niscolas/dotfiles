@@ -1,3 +1,6 @@
 [submodule ".config/ranger/plugins/ranger_devicons"]
 	path = .config/ranger/plugins/ranger_devicons
 	url = https://github.com/alexanderjeurissen/ranger_devicons
+[submodule ".config/xplr/plugins/dual-pane"]
+	path = .config/xplr/plugins/dual-pane
+	url = https://github.com/sayanarijit/dual-pane.xplr
