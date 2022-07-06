@@ -1,0 +1,7 @@
+.idea/
+.vs/
+node_modules/
+.env
+.pk
+.pem
+.pub
