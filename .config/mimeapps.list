@@ -1,0 +1,6 @@
+[Added Associations]
+image/jpeg=org.gnome.eog.desktop;
+image/png=org.gnome.eog.desktop;
+image/svg+xml=org.inkscape.Inkscape.desktop;
+text/plain=nvim.desktop;
+video/mp4=vlc.desktop;
