@@ -1,0 +1,26 @@
+font:
+  normal:
+    family: Iosevka Term
+    style: Regular
+
+  bold:
+    family: Iosevka Term
+    style: Bold
+
+  italic:
+    family: Iosevka Term
+    style: Italic
+
+  bold_italic:
+    family: Iosevka Term
+    style: Bold Italic
+
+  size: 11
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0

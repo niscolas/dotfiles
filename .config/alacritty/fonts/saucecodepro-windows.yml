@@ -1,0 +1,26 @@
+font:
+  normal:
+    family: SauceCodePro NF
+    style: Medium
+
+  bold:
+    family: SauceCodePro NF
+    style: Bold
+
+  italic:
+    family: SauceCodePro NF
+    style: Italic
+
+  bold_italic:
+    family: SauceCodePro NF
+    style: BoldItalic
+
+  size: 11
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0

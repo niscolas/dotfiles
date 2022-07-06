@@ -1,0 +1,26 @@
+font:
+  normal:
+    family: SpaceMono NF
+    style: Regular
+
+  bold:
+    family: SpaceMono NF
+    style: Bold
+
+  italic:
+    family: SpaceMono NF
+    style: Italic
+
+  bold_italic:
+    family: SpaceMono NF
+    style: BoldItalic
+
+  size: 11
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0

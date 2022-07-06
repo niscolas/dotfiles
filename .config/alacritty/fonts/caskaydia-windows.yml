@@ -1,0 +1,26 @@
+font:
+  normal:
+    family: CaskaydiaCove NF
+    style: Book
+
+  bold:
+    family: CaskaydiaCove NF
+    style: Book
+
+  italic:
+    family: CaskaydiaCove NF
+    style: Book
+
+  bold_italic:
+    family: CaskaydiaCove NF
+    style: Book
+
+  size: 11
+
+  #offset:
+  #  x: 0
+  #  y: 0
+
+  #glyph_offset:
+  #  x: 0
+  #  y: 0

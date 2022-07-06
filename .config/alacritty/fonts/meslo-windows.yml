@@ -1,0 +1,26 @@
+font:
+  normal:
+    family: MesloLGL NF
+    style: Regular
+
+  bold:
+    family: MesloLGL NF
+    style: Bold
+
+  italic:
+    family: MesloLGL NF
+    style: Italic
+
+  bold_italic:
+    family: MesloLGL NF
+    style: BoldItalic
+
+  size: 11
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0

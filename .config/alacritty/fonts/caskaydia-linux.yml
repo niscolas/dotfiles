@@ -1,0 +1,26 @@
+font:
+  normal:
+    family: CaskaydiaCove Nerd Font
+    style: Medium
+
+  bold:
+    family: CaskaydiaCove Nerd Font
+    style: Bold
+
+  italic:
+    family: CaskaydiaCove Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: CaskaydiaCove Nerd Font
+    style: Bold Italic
+
+  size: 11
+
+  #offset:
+  #  x: 0
+  #  y: 0
+
+  #glyph_offset:
+  #  x: 0
+  #  y: 0

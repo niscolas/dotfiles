@@ -1,0 +1,26 @@
+font:
+  normal:
+    family: mononoki NF
+    style: Regular
+
+  bold:
+    family: mononoki NF
+    style: Bold
+
+  italic:
+    family: mononoki NF
+    style: Italic
+
+  bold_italic:
+    family: mononoki NF
+    style: BoldItalic
+
+  size: 11
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0

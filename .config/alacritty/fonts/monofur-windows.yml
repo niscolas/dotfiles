@@ -1,0 +1,19 @@
+font:
+  normal:
+    family: Monofur NF
+
+  bold:
+    family: Monofurbold NF
+
+  italic:
+    family: Monofuritalic NF
+
+  size: 11
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0
