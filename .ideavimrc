@@ -1,0 +1,86 @@
+source ~/dotfiles/nvim/settings.vim
+source ~/dotfiles/nvim/keymap.vim
+
+let mapleader=" "
+
+" idea settings
+set ideajoin
+set idearefactormode=keep
+
+" plugins: {{{
+
+set NERDTree
+set argtextobj
+set commentary
+set easymotion
+set surround
+set highlightedyank
+set textobj-indent
+set textobj-entire
+set ReplaceWithRegister
+
+" }}}
+
+" plugins settings (NERDTree)
+map <leader>hh :NERDTreeToggle<cr>
+map <leader>hf :NERDTreeFind<cr>
+
+" source .ideavimrc
+nnoremap \v :source ~/.ideavimrc<cr>
+
+" project navigation
+map <leader>hf <Action>(SelectInProjectView)
+
+" window management
+map <leader>qq <Action>(CloseEditor)
+map <leader>qa <Action>(CloseAllEditors)
+map <leader>qo <Action>(CloseAllEditorsButActive)
+
+map <a-h> <Action>(PreviousTab)
+map <a-l> <Action>(NextTab)
+
+" navigation: {{{
+
+map <c-\> <Action>(ParameterInfo)
+map <leader>fu <Action>(ShowUsages)
+map <leader>fi <Action>(GotoImplementation)
+map <leader>fe <Action>(ReSharperGotoNextErrorInSolution)
+
+map <a-j> <Action>(MoveStatementDown)
+map <a-k> <Action>(MoveStatementUp)
+
+nnoremap [q :action PreviousOccurence<cr>
+nnoremap ]q :action NextOccurence<cr>
+
+map <leader>s <Action>(SaveAll)
+map <leader>pm <Action>(PasteMultiple)
+map <leader>pc "+p
+
+map <leader>rm <Action>(Move)
+map <leader>cf <Action>(ReformatCode)
+map <leader>rn <Action>(RenameElement)
+map <leader>ca <Action>(ShowIntentionActions)
+
+" }}}
+
+" code generation
+map <leader>ce <Action>(NewElement)
+map <leader>ce <Action>(Generate)
+map <leader>cx <Action>(ExtractMethod)
+
+" toggle distraction free mode
+map <leader>z <Action>(ToggleDistractionFreeMode)
+
+" debugging
+map <leader>dd <Action>(Debug)
+map <leader>dl <Action>(ToggleLineBreakpoint)
+map <leader>dr <Action>(TriggerPlayInUnity)
+map <leader>ds <Action>(Stop)
+map <leader>dw <Action>(ActivateDebugToolWindow)
+
+" testing
+map <leader>tw <Action>(ActivateUnitTestsToolWindow)
+map <leader>tr <Action>(RiderUnitTestRunContextSplitAction)
+map <leader>ts <Action>(RiderUnitTestSessionAbortAction)
+map <leader>td <Action>(RiderUnitTestDebugContextAction)
+
