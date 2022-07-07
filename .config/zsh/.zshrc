@@ -22,7 +22,7 @@ alias lt="l -T"
 alias n="nvim --startuptime /tmp/nvim-startuptime"
 alias r=". ranger"
 alias x="xplr"
-alias dot="/usr/bin/git --git-dir=$HOME/dots --work-tree=$HOME"
+alias dot="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 
 ## settings
 # https://stackoverflow.com/a/24237590/16589245
