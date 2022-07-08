@@ -20,9 +20,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 exec setxkbmap us
 exec setxkbmap -option "compose:menu" 
-exec ~/dotfiles/i3/scripts/google_drive_rclone.sh
+exec ~/.config/i3/scripts/google_drive_rclone.sh
 
-exec_always --no-startup-id ~/dotfiles/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpapers/sunset-116-1920×1080.jpg
 
 ## modes
@@ -38,7 +38,7 @@ mode "resize" {
     bindsym Escape $i3_mode_default bindsym Return $i3_mode_default
 }
 
-bindsym $mod+comma exec ~/dotfiles/i3/scripts/swap_kblayout.sh
+bindsym $mod+comma exec ~/.config/i3/scripts/swap_kblayout.sh
 
 ## terminal
 bindsym $mod+Return exec kitty
