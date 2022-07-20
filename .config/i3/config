@@ -5,10 +5,12 @@ set $i3_mode_default mode "default"
 
 ## execs
 exec --no-startup-id xrandr --output eDP-1 --auto
-exec --no-startup-id picom
+exec --no-startup-id picom -b
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
+exec --no-startup-id barrier
 exec --no-startup-id sudo ~/scripts/disable_turbo.sh
+exec --no-startup-id dunst
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -20,9 +22,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 exec setxkbmap us
 exec setxkbmap -option "compose:menu" 
-exec ~/.config/i3/scripts/google_drive_rclone.sh
+exec $HOME/.config/i3/scripts/google_drive_rclone.sh
 
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpapers/sunset-116-1920×1080.jpg
 
 ## modes
@@ -38,7 +40,7 @@ mode "resize" {
     bindsym Escape $i3_mode_default bindsym Return $i3_mode_default
 }
 
-bindsym $mod+comma exec ~/.config/i3/scripts/swap_kblayout.sh
+bindsym $mod+comma exec $HOME/.config/i3/scripts/swap_kblayout.sh
 
 ## terminal
 bindsym $mod+Return exec kitty
@@ -121,21 +123,11 @@ bindsym $mod+Shift+e $exec_exit_i3
 ## ui
 font pango:CaskaydiaCove Nerd Font Bold 8
 
-gaps inner 12
+gaps inner 16
 
-for_window [all] title_window_icon yes
-for_window [all] title_window_icon padding 8
-for_window [all] border normal 0
+# for_window [all] title_window_icon yes
+# for_window [all] title_window_icon padding 8
+for_window [all] border pixel 4
 
-set $color_primary          #FABD2F
-set $color_background       #282828
-set $color_background_alt   #373B41
-set $color_foreground       #EBDBB2
-set $color_disabled         #928374
+include $HOME/.config/i3/colorschemes/gruvbox
 
-# class                 border  backgr.     text                indicator           child_border
-client.focused          $color_primary      $color_primary      $color_background   $color_primary      $color_primary
-client.focused_inactive $color_background   $color_background   $color_disabled     $color_background   $color_background 
-client.unfocused        $color_background   $color_background   $color_disabled     $color_background   $color_back
-
-client.background $color_foreground
