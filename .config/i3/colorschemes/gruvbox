@@ -1,0 +1,14 @@
+set $color_primary          #FABD2F
+set $color_background       #282828
+set $color_background_alt   #373B41
+set $color_foreground       #EBDBB2
+set $color_disabled         #928374
+
+# class                 border              backgr.             text                  indicator           child_border
+client.focused          $color_primary      $color_primary      $color_background     $color_primary      $color_primary
+client.focused_inactive $color_background   $color_background   $color_background     $color_background   $color_background 
+client.unfocused        $color_background   $color_background   $color_background     $color_background   $color_background
+client.urgent           $color_background   $color_background   $color_background     $color_background   $color_background
+client.placeholder      $color_background   $color_background   $color_background     $color_background   $color_background
+
+client.background $color_foreground
