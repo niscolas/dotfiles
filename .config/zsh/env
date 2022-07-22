@@ -1,11 +1,18 @@
+source "$HOME/.cargo/env"
+
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT="1"
 export EDITOR="nvim"
+export FrameworkPathOverride=/lib/mono/4.5
+export HISTFILE="$HOME/.zshhistory"
+export HISTSIZE=1000
 export LANG="pt_BR.utf8"
 export PATH="$HOME/bin:$HOME/.local/bin:$HOME/usr/local/go/bin:$HOME/.cargo/bin:$PATH"
+export SAVEHIST=1000
 export TERMINAL="/bin/kitty"
 export VISUAL=$EDITOR
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_DIRS="/usr/share:/usr/share/local:$PATH"
 export XDG_DATA_HOME="$HOME/.local/share"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export ZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules,**/*.meta}/*" 2> /dev/null'
 export ZI_HOME="${HOME}/.zi"
-export FrameworkPathOverride=/lib/mono/4.5

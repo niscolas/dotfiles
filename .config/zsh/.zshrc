@@ -4,14 +4,9 @@ zi ice wait
 zi load "zsh-users/zsh-autosuggestions"
 zi load "zsh-users/zsh-syntax-highlighting"
 
-eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-## exports
-FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules,**/*.meta}/*" 2> /dev/null'
-HISTFILE=~/.zshhistory
-HISTSIZE=1000
-SAVEHIST=1000
+export STARSHIP_CONFIG="$HOME/.config/starship.toml"
 
 ## aliases
 alias cat="bat"
@@ -50,3 +45,4 @@ bindkey "\e[3;6~" kill-line
 # urxvt
 bindkey "\e[3@" kill-line
 
+eval "$(starship init zsh)"

@@ -3,8 +3,6 @@
     c = commit -m
     ca = commit --amend --no-edit
     ch = checkout
-    d = diff
-    p = push
     s = status -sb
     sr = submodule foreach git s
     t = log --graph --pretty=format:'%Cred%h%Creset - %Cgreen(%ad)%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
