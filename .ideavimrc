@@ -1,11 +1,17 @@
-source ~/dotfiles/nvim/settings.vim
-source ~/dotfiles/nvim/keymap.vim
-
 let mapleader=" "
 
 " idea settings
 set ideajoin
 set idearefactormode=keep
+
+set colorcolumn=80
+set hlsearch
+set ignorecase
+set incsearch
+set number
+set relativenumber
+set showmode
+set smartcase
 
 " plugins: {{{
 
@@ -83,4 +89,3 @@ map <leader>tw <Action>(ActivateUnitTestsToolWindow)
 map <leader>tr <Action>(RiderUnitTestRunContextSplitAction)
 map <leader>ts <Action>(RiderUnitTestSessionAbortAction)
 map <leader>td <Action>(RiderUnitTestDebugContextAction)
-

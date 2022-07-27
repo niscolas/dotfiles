@@ -7,7 +7,7 @@ configuration {
   }
 
   icon-theme: "Papirus";
-  modi: "combi#power:~/.config/rofi/scripts/powermenu.sh#xrandr layout:~/.config/rofi/scripts/xrandrlayoutmenu.sh";
+  modi: "combi#brightness:~/.config/rofi/scripts/brightness_menu.sh#power:~/.config/rofi/scripts/powermenu.sh#xrandr layout:~/.config/rofi/scripts/xrandrlayoutmenu.sh";
 
   timeout {
       action: "kb-cancel";

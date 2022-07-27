@@ -8,7 +8,7 @@ exec --no-startup-id xrandr --auto
 exec --no-startup-id picom -b
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
-exec --no-startup-id barrier
+exec --no-startup-id ~/scripts/barrier/work_server.sh
 exec --no-startup-id sudo ~/scripts/disable_turbo.sh
 exec --no-startup-id dunst
 
@@ -125,9 +125,9 @@ font pango:CaskaydiaCove Nerd Font Bold 8
 
 gaps inner 16
 
-# for_window [all] title_window_icon yes
-# for_window [all] title_window_icon padding 8
-for_window [all] border none
+for_window [all] title_window_icon yes
+for_window [all] title_window_icon padding 8
+for_window [all] border pixel 4
 
 include $HOME/.config/i3/colorschemes/gruvbox
 

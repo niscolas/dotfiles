@@ -6,9 +6,9 @@ set $color_disabled         #928374
 
 # class                 border              backgr.             text                  indicator           child_border
 client.focused          $color_primary      $color_primary      $color_background     $color_primary      $color_primary
-client.focused_inactive $color_background   $color_background   $color_background     $color_background   $color_background 
-client.unfocused        $color_background   $color_background   $color_background     $color_background   $color_background
-client.urgent           $color_background   $color_background   $color_background     $color_background   $color_background
-client.placeholder      $color_background   $color_background   $color_background     $color_background   $color_background
+client.focused_inactive $color_background   $color_background   $color_foreground     $color_background   $color_background 
+client.unfocused        $color_background   $color_background   $color_foreground     $color_background   $color_background
+client.urgent           $color_background   $color_background   $color_foreground     $color_background   $color_background
+client.placeholder      $color_background   $color_background   $color_foreground     $color_background   $color_background
 
 client.background $color_foreground

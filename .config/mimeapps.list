@@ -4,3 +4,6 @@ image/png=org.gnome.eog.desktop;
 image/svg+xml=org.inkscape.Inkscape.desktop;
 text/plain=nvim.desktop;
 video/mp4=vlc.desktop;
+
+[Default Applications]
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
