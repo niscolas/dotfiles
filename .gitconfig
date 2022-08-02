@@ -45,7 +45,3 @@
     trustExitCode = false
     cmd = $UNITY_EDITOR/Editor/Data/Tools/UnityYAMLMerge.exe merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
 
-[user]
-    name = niscolas
-    email = nic.cp@hotmail.com
-
