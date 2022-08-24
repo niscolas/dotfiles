@@ -11,7 +11,7 @@ configuration {
   font: "Rec Mono Linear 10";
 
   drun {
-    display-name: "";
+    display-name: "";
   }
 
   run {
@@ -29,7 +29,7 @@ configuration {
 }
 
 * {
-  border: 0;
+  border: 4;
   margin: 0;
   padding: 0;
   spacing: 0;
