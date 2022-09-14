@@ -1,4 +1,5 @@
 source "$HOME/.cargo/env"
+source "$HOME/.config/zsh/niscolas_loader.sh"
 
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT="1"
 export EDITOR="nvim"

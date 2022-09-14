@@ -5,11 +5,8 @@ set $i3_mode_default mode "default"
 
 ## execs
 exec --no-startup-id xrandr --auto
-exec --no-startup-id picom -b
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
-exec --no-startup-id ~/scripts/barrier/work_server.sh
-exec --no-startup-id sudo ~/scripts/disable_turbo.sh
 exec --no-startup-id dunst
 
 # Start XDG autostart .desktop files using dex. See also
@@ -20,10 +17,13 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+exec --no-startup-id lxsession
+
 exec setxkbmap us
 exec setxkbmap -option "compose:menu" 
-exec $HOME/.config/i3/scripts/google_drive_rclone.sh
 
+exec_always --no-startup-id picom --experimental-backends -b
+exec_always --no-startup-id autotiling
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpapers/sunset-116-1920×1080.jpg
 
@@ -47,6 +47,10 @@ bindsym $mod+Return exec kitty
 
 ## rofi
 bindsym $mod+d exec rofi -show combi
+
+## brightness
+bindsym $mod+Up exec brightnessctl set +10%
+bindsym $mod+Down exec brightnessctl set 10%-
 
 ## other programs
 bindsym $mod+Shift+s exec flameshot gui
@@ -76,8 +80,8 @@ bindsym $mod+e layout toggle split
 
 ## floating windows
 floating_modifier $mod
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+u floating toggle
+bindsym $mod+u focus mode_toggle
 
 ## wokspaces settings
 set $ws1 "1"
@@ -128,6 +132,9 @@ gaps inner 16
 for_window [all] title_window_icon yes
 for_window [all] title_window_icon padding 8
 for_window [all] border pixel 4
+
+for_window [instance="Godot_Engine"] floating enable
+for_window [instance="Godot_Editor"] floating disable
 
 include $HOME/.config/i3/colorschemes/gruvbox
 
