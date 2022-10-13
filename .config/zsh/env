@@ -12,6 +12,7 @@ export SAVEHIST=1000
 export TERMINAL="/bin/kitty"
 export VISUAL=$EDITOR
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_DIR="$HOME/.config"
 export XDG_DATA_DIRS="/usr/share:/usr/share/local:$PATH"
 export XDG_DATA_HOME="$HOME/.local/share"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
