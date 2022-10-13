@@ -1,7 +1,2 @@
-.idea/
-.vs/
-node_modules/
-.env
-.pk
-.pem
-.pub
+.config/zsh/.zdirs
+.config/zsh/.zcompdump
