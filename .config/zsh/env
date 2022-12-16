@@ -1,20 +1,27 @@
+#!/bin/bash
+
+configs_dir="$HOME/.config"
+
 source "$HOME/.cargo/env"
 source "$HOME/.config/zsh/niscolas_loader.sh"
 
-export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT="1"
+export PATH="$HOME/bin:$HOME/.local/bin:$HOME/usr/local/go/bin:$HOME/.cargo/bin:/Applications/Barrier.app/Contents/MacOS:$PATH"
 export EDITOR="nvim"
-export FrameworkPathOverride=/lib/mono/4.5
+
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT="1"
+export FrameworkPathOverride="/lib/mono/4.5"
+export GIT_CONFIG_GLOBAL="$configs_dir/git"
 export HISTFILE="$HOME/.zshhistory"
 export HISTSIZE=1000
 export LANG="pt_BR.utf8"
-export PATH="$HOME/bin:$HOME/.local/bin:$HOME/usr/local/go/bin:$HOME/.cargo/bin:/Applications/Barrier.app/Contents/MacOS:$PATH"
 export SAVEHIST=1000
+export STARSHIP_CONFIG="$configs_dir/starship.toml"
 export TERMINAL="/bin/kitty"
 export VISUAL=$EDITOR
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CONFIG_DIR="$HOME/.config"
+export XDG_CONFIG_DIR="$configs_dir"
+export XDG_CONFIG_HOME="$configs_dir"
 export XDG_DATA_DIRS="/usr/share:/usr/share/local:$PATH"
 export XDG_DATA_HOME="$HOME/.local/share"
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export ZDOTDIR="$configs_dir/zsh"
 export ZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules,**/*.meta}/*" 2> /dev/null'
-export ZI_HOME="${HOME}/.zi"
+export ZI_HOME="$HOME/.zi"

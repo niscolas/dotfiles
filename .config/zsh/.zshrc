@@ -1,12 +1,19 @@
+scripts_dir="$HOME/scripts"
+
 source "$ZI_HOME/bin/zi.zsh"
+
+run_script () {
+    source "$scripts_dir/$1"
+}
+
+run_script "fetch_os_name.sh"
+run_script "fetch_nvim_exec.sh"
 
 zi ice wait
 zi load "zsh-users/zsh-autosuggestions"
 zi load "zsh-users/zsh-syntax-highlighting"
 
 eval "$(zoxide init zsh)"
-
-export STARSHIP_CONFIG="$HOME/.config/starship.toml"
 
 ## aliases
 alias b="buku --suggest"
@@ -18,6 +25,7 @@ alias dot="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 alias ext="~/.config/zsh/scripts/extract-file.sh"
 alias l="exa -aghHl@ --group-directories-first --icons --color always"
 alias lt="l -T"
+alias nvim="$nvim_exec"
 alias n="nvim --startuptime /tmp/nvim-startuptime"
 alias r=". ranger"
 alias x="xplr"
@@ -28,9 +36,5 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 
 bindkey -v
 
-prompt off
-eval "$(starship init zsh)"
-
-# this must be at the end of the file for sdkman to work
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+run_script "load_starship.sh"
+run_script "sdkman.sh"
