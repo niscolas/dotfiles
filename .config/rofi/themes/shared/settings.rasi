@@ -1,0 +1,10 @@
+@import "resolutions/1920x1080.rasi"
+
+* {
+    prompt-padding: 10px 10px;
+}
+
+#window {
+    width: 50%;
+    height: 100%;
+}

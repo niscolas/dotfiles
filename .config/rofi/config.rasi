@@ -1,21 +1,32 @@
+@theme "themes/shared/colorschemes/gruvbox.rasi"
+
 configuration {
-  combi-modi: "window,drun,run";
-
-  filebrowser {
-      directories-first: true;
-      sorting-method:    "name";
-  }
-
-  icon-theme: "Papirus";
-  modi: "combi#scripts:~/.config/rofi/scripts/scripts.sh#power:~/.config/rofi/scripts/powermenu.sh#xrandr layout:~/.config/rofi/scripts/xrandrlayoutmenu.sh";
-
-  timeout {
-      action: "kb-cancel";
-      delay:  0;
-  }
-
-  sidebar-mode: true;
-  show-icons: true;
+    cycle:           true;
+    disable-history: false;
+    display-drun:    "apps";
+    icon-theme: "Papirus";
+    modes: [ drun ];
+    monitor:         "-4";
+    show-icons: true;
+    sidebar-mode: true;
 }
 
-@theme "gruvbox.rasi"
+window {
+    border: 0px;
+}
+
+inputbar {
+    spacing: -4px;
+}
+
+listview {
+    columns: 1;
+    scrollbar: false;
+    border: 0px;
+}
+
+element-text,
+element-icon {
+    background-color: transparent;
+}
+
