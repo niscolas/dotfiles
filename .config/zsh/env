@@ -10,7 +10,7 @@ export EDITOR="nvim"
 
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT="1"
 export FrameworkPathOverride="/lib/mono/4.5"
-export GIT_CONFIG_GLOBAL="$configs_dir/git"
+export GIT_CONFIG_GLOBAL="$configs_dir/git/.gitconfig"
 export HISTFILE="$HOME/.zshhistory"
 export HISTSIZE=1000
 export LANG="pt_BR.utf8"
