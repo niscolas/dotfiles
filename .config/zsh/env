@@ -2,10 +2,16 @@
 
 configs_dir="$HOME/.config"
 
-source "$HOME/.cargo/env"
+source export_os_name.sh
+source export_nvim_exec.sh
+
+cargo_env_path="$HOME/.cargo/env"
+[[ -f $cargo_env_path ]] && source $cargo_env_path
+
 source "$HOME/.config/zsh/niscolas_loader.sh"
 
-export PATH="$HOME/bin:$HOME/.local/bin:$HOME/usr/local/go/bin:$HOME/.cargo/bin:/Applications/Barrier.app/Contents/MacOS:$PATH"
+script_dirs=$(echo $HOME/scripts/**/ | sed 's/\s\s*/:/g')
+export PATH="$script_dirs:$HOME/bin:$HOME/.local/bin:$HOME/usr/local/go/bin:$HOME/.cargo/bin:/Applications/Barrier.app/Contents/MacOS:$PATH"
 export EDITOR="nvim"
 
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT="1"
