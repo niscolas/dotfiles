@@ -1,18 +1,17 @@
 #!/bin/bash
 
 configs_dir="$HOME/.config"
+script_dirs=$(echo $HOME/scripts/**/ | sed 's/\s\s*/:/g')
+export PATH="$script_dirs:$HOME/bin:$HOME/.local/bin:$HOME/usr/local/go/bin:$HOME/.cargo/bin:/Applications/Barrier.app/Contents/MacOS:$PATH"
 
-source export_os_name.sh
-source export_nvim_exec.sh
+export EDITOR="nvim"
 
 cargo_env_path="$HOME/.cargo/env"
 [[ -f $cargo_env_path ]] && source $cargo_env_path
 
 source "$HOME/.config/zsh/niscolas_loader.sh"
-
-script_dirs=$(echo $HOME/scripts/**/ | sed 's/\s\s*/:/g')
-export PATH="$script_dirs:$HOME/bin:$HOME/.local/bin:$HOME/usr/local/go/bin:$HOME/.cargo/bin:/Applications/Barrier.app/Contents/MacOS:$PATH"
-export EDITOR="nvim"
+source export_os_name.sh
+source export_nvim_exec.sh
 
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT="1"
 export FrameworkPathOverride="/lib/mono/4.5"
