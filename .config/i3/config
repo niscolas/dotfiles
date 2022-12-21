@@ -3,28 +3,21 @@ set $mod Mod4
 
 set $i3_mode_default mode "default"
 
-## execs
-exec --no-startup-id xrandr --auto
 exec --no-startup-id blueman-applet
-exec --no-startup-id nm-applet
-exec --no-startup-id dunst
-
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-
+exec --no-startup-id dunst
+exec --no-startup-id nm-applet
+exec --no-startup-id picom
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
 exec --no-startup-id lxsession
 
 exec setxkbmap us
 exec setxkbmap -option "compose:menu" 
 
-exec_always --no-startup-id picom --experimental-backends -b
 exec_always --no-startup-id autotiling
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id zsh $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpapers/sunset-116-1920×1080.jpg
 
 ## modes
@@ -40,13 +33,14 @@ mode "resize" {
     bindsym Escape $i3_mode_default bindsym Return $i3_mode_default
 }
 
-bindsym $mod+comma exec $HOME/.config/i3/scripts/swap_kblayout.sh
+bindsym $mod+comma exec $HOME/scripts/keyboard/swap_layout.sh
 
 ## terminal
 bindsym $mod+Return exec kitty
 
 ## rofi
-bindsym $mod+d exec rofi -show combi
+bindsym $mod+d exec $HOME/.config/rofi/scripts/apps.sh
+bindsym $mod+Ctrl+p exec $HOME/.config/rofi/scripts/power.sh
 
 ## brightness
 bindsym $mod+Up exec brightnessctl set +10%
@@ -74,6 +68,7 @@ bindsym $mod+Alt+h split h
 bindsym $mod+Alt+v split v
 
 bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle global
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
