@@ -1,9 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# Terminate already running bar instances
-# If all your bars have ipc enabled, you can use 
-polybar-msg cmd quit
-# Otherwise you can use the nuclear option:
-# killall -q polybar
+killall -q polybar &
 
-polybar
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    notify-send "loading $m"
+    MONITOR=$m polybar --reload main &
+  done
+else
+  polybar --reload main &
+fi
