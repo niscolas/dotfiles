@@ -2,7 +2,7 @@
 
 zi_home_path="$ZI_HOME/bin/zi.zsh"
 if ! [ -f  $zi_home_path ]; then
-    exit 2
+    exit
 fi
 
 source $zi_home_path  
