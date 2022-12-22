@@ -1,7 +1,7 @@
 #!/bin/bash
 
 configs_dir="$HOME/.config"
-script_dirs=$(echo $HOME/scripts/**/ | sed 's/\s\s*/:/g')
+script_dirs=$(echo $HOME/scripts/**/ | sed 's/ /:/g')
 export PATH="$script_dirs:$HOME/bin:$HOME/.local/bin:$HOME/usr/local/go/bin:$HOME/.cargo/bin:/Applications/Barrier.app/Contents/MacOS:$PATH"
 
 export EDITOR="nvim"
