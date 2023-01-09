@@ -1,0 +1,14 @@
+{
+   "version": 3,
+   "mode": "MODE_VIDEO",
+   "data_source": "/home/niscolas/Videos/Hidamari/mylivewallpapers-com-Beach-Tree.mp4",
+   "is_mute": false,
+   "audio_volume": 50,
+   "is_static_wallpaper": true,
+   "static_wallpaper_blur_radius": 5,
+   "is_detect_maximized": true,
+   "fade_duration_sec": 1.5,
+   "fade_interval": 0.1,
+   "is_show_systray": false,
+   "is_first_time": false
+}
