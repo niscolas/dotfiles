@@ -12,4 +12,4 @@ if [[ -z $internal_monitor ]]; then
 fi
 
 xrandr --output $hdmi_monitor --primary --mode 1920x1080 --rate 144.0 --left-of \
-    --output $internal_monitor --mode 1920x1080 --rate 144.0 --scale 0.75
+    $internal_monitor --mode 1920x1080 --rate 144.0

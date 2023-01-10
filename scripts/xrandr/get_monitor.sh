@@ -5,4 +5,4 @@ if [ $# -eq 0 ]; then
     exit 2
 fi
 
-echo $(xrandr --listmonitors | grep $1 | awk '{print $4}')
+echo $(xrandr | grep $1 | grep ' connected' | awk '{print $1}')
