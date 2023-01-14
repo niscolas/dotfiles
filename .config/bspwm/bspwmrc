@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc config focused_border_color "#FABD2F"
+bspc config normal_border_color "#32302F"
+bspc config border_width 4
+
+bspc config window_gap 12
+
+bspc config split_ratio 0.52
+bspc config focus_follows_pointer false
+bspc config pointer_follows_focus true
+
+# monocle: {{{
+bspc config borderless_monocle true
+bspc config gapless_monocle false
+bspc config paddingless_monocle true
+bspc config single_monocle false
+# }}}
+
+xsetroot -cursor_name left_ptr &
+blueman-applet &
+dex --autostart --environment bspwm &
+dunst &
+nm-applet &
+picom &
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+xss-lock --transfer-sleep-lock -- i3lock --nofork &
+lxsession &
+
+setxkbmap us &
+setxkbmap -option "compose:menu" &
+
+bash $HOME/.config/polybar/launch.sh &
+feh --bg-scale $HOME/Pictures/wallpapers/house_in_lake_minimalist.png &
+
+# vim:foldmethod=marker
