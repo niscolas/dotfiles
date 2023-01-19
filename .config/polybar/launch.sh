@@ -3,7 +3,7 @@
 killall -q polybar &
 
 if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+  for m in $(xrandr --listmonitors | awk 'NR > 1 {print $4}'); do
     notify-send "loading $m"
     MONITOR=$m polybar --reload main &
   done
