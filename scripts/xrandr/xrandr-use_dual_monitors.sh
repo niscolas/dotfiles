@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-internal_monitor=$(xrandr-get_internal_monitor.sh)
-hdmi_monitor=$(xrandr-get_hdmi_monitor.sh)
+scripts_dir=$HOME/scripts
+internal_monitor=$($scripts_dir/xrandr/xrandr-get_internal_monitor.sh)
+hdmi_monitor=$($scripts_dir/xrandr/xrandr-get_hdmi_monitor.sh)
 
 if [[ -z $hdmi_monitor ]]; then
     exit

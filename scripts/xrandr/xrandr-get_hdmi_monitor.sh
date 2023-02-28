@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-xrandr-get_monitor.sh HDMI
+$HOME/scripts/xrandr/xrandr-get_monitor.sh HDMI
