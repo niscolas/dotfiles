@@ -2,6 +2,6 @@
 
 while true 
 do
-    barrierc --no-daemon --disable-crypto 10.42.0.1
+    barrierc --no-daemon --disable-crypto 192.168.100.37
     sleep 1
 done
