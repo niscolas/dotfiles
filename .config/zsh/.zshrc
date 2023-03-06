@@ -1,4 +1,4 @@
-source load_zi.sh
+source "$SCRIPTS_DIR/load_zi.sh"
 
 eval "$(zoxide init zsh)"
 
@@ -16,6 +16,7 @@ alias lt="l -T"
 alias nvim="$NVIM_EXEC"
 alias n="nvim"
 alias r=". ranger"
+alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
 alias x="xplr"
 
 ## settings
@@ -24,5 +25,5 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 
 bindkey -v
 
-source load_starship.sh
-source sdkman.sh
+source "$SCRIPTS_DIR/load_starship.sh"
+source "$SCRIPTS_DIR/sdkman.sh"

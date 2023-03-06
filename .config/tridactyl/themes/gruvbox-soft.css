@@ -33,6 +33,7 @@
 }
 
 :root #completions table {
+    background: var(--background)
     font-size: 0.8rem;
     font-weight: 200;
     border-spacing: 0;

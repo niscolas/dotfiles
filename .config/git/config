@@ -1,8 +1,8 @@
 [alias]
     a = add -A
-    c = commit -m
     ca = commit --amend --no-edit
     ch = checkout
+    cm = commit -m
     s = status -sb
     sm = submodule
     sr = submodule foreach git s
@@ -16,12 +16,13 @@
     autocrlf = input
 
 [credential]
-	helper = store
+    helper = store
 
 [delta]
     line-numbers = true
     navigate = true  # use n and N to move between diff sections
     side-by-side = true
+    syntax-theme = gruvbox-dark
 
 [diff]
     colorMoved = default

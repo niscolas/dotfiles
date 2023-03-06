@@ -28,8 +28,8 @@ set ReplaceWithRegister
 " }}}
 
 " plugins settings (NERDTree)
-map <leader>hh :NERDTreeToggle<cr>
-map <leader>hf :NERDTreeFind<cr>
+map <leader>ee :NERDTreeToggle<cr>
+map <leader>ef :NERDTreeFind<cr>
 
 " source .ideavimrc
 nnoremap \v :source ~/.ideavimrc<cr>

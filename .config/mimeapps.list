@@ -1,10 +1,28 @@
 [Added Associations]
-image/jpeg=org.gnome.eog.desktop;
-image/png=org.gnome.eog.desktop;
+image/jpeg=org.gnome.eog.desktop;org.xfce.ristretto.desktop;shotwell-viewer.desktop;
+image/png=org.gnome.eog.desktop;shotwell-viewer.desktop;
 image/svg+xml=org.inkscape.Inkscape.desktop;
 text/plain=nvim.desktop;
 video/mp4=vlc.desktop;
+video/x-matroska=vlc.desktop;
+x-scheme-handler/http=xfce4-web-browser.desktop;
+x-scheme-handler/https=xfce4-web-browser.desktop;
+inode/directory=xfce4-file-manager.desktop;
+x-scheme-handler/trash=xfce4-file-manager.desktop;
+application/pdf=librewolf.desktop;
+application/x-wine-extension-ini=nvim.desktop;
+video/mpeg=vlc.desktop;
 
 [Default Applications]
 x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
 x-scheme-handler/fleet=Fleet.desktop
+image/jpeg=shotwell-viewer.desktop
+video/x-matroska=vlc.desktop
+x-scheme-handler/http=xfce4-web-browser.desktop
+x-scheme-handler/https=xfce4-web-browser.desktop
+inode/directory=xfce4-file-manager.desktop
+x-scheme-handler/trash=xfce4-file-manager.desktop
+application/pdf=librewolf.desktop
+image/png=shotwell-viewer.desktop
+application/x-wine-extension-ini=nvim.desktop
+video/mpeg=vlc.desktop

@@ -1,32 +1,59 @@
 #!/bin/bash
 
-configs_dir="$HOME/.config"
-script_dirs=$(echo $HOME/scripts/**/ | sed 's/ /:/g')
-export PATH="$script_dirs:$HOME/bin:$HOME/.local/bin:$HOME/usr/local/go/bin:$HOME/.cargo/bin:/Applications/Barrier.app/Contents/MacOS:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/usr/local/go/bin"
+export PATH="$PATH:/Applications/Barrier.app/Contents/MacOS"
+export PATH="$PATH:/home/niscolas/.local/share/JetBrains/Toolbox/scripts"
 
-export EDITOR="nvim"
+export SCRIPTS_DIR="$HOME/scripts"
+script_dirs="$(echo $SCRIPTS_DIR/**/ | sed 's/ /:/g')"
+export PATH="$PATH:$script_dirs"
 
-cargo_env_path="$HOME/.cargo/env"
-[[ -f $cargo_env_path ]] && source $cargo_env_path
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
 
-source "$HOME/.config/zsh/niscolas_loader.sh"
-source export_os_name.sh
-source export_nvim_exec.sh
-
-export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT="1"
-export FrameworkPathOverride="/lib/mono/4.5"
-export GIT_CONFIG_GLOBAL="$configs_dir/git/.gitconfig"
-export HISTFILE="$HOME/.zshhistory"
-export HISTSIZE=1000
-export LANG="pt_BR.utf8"
-export SAVEHIST=1000
-export STARSHIP_CONFIG="$configs_dir/starship.toml"
-export TERMINAL="/bin/kitty"
-export VISUAL=$EDITOR
-export XDG_CONFIG_DIR="$configs_dir"
-export XDG_CONFIG_HOME="$configs_dir"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_DIR="$XDG_CONFIG_HOME"
+export XDG_CURRENT_DESKTOP="bspwm"
 export XDG_DATA_DIRS="/usr/share:/usr/share/local:$PATH"
 export XDG_DATA_HOME="$HOME/.local/share"
-export ZDOTDIR="$configs_dir/zsh"
+export XDG_STATE_DIR="$XDG_STATE_HOME"
+
+export ANDROID_HOME="$XDG_DATA_HOME/android"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
+export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT="1"
+export EDITOR="nvim"
+export FrameworkPathOverride="/lib/mono/4.5"
+export GOPATH="$XDG_DATA_HOME/go"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+export HISTFILE="$XDG_STATE_HOME/zsh/history"
+export HISTSIZE=1000
+export LANG="pt_BR.utf8"
+export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
+export OMNISHARPHOME="$XDG_CONFIG_HOME/omnisharp"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export SAVEHIST=1000
+export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
+export TERMINAL="/bin/kitty"
+export VISUAL=$EDITOR
+export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
+export WINEPREFIX="$XDG_DATA_HOME/wine"
+export XCOMPOSEFILE="$XDG_CONFIG_HOME/X11/xcompose"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules,**/*.meta}/*" 2> /dev/null'
 export ZI_HOME="$HOME/.zi"
+
+source "$ZDOTDIR/niscolas_loader.sh"
+source "$SCRIPTS_DIR/export_os_name.sh"
+source "$SCRIPTS_DIR/export_nvim_exec.sh"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+export PATH="$PATH:$CARGO_HOME/bin"
+
+cargo_env_path="$CARGO_HOME/env"
+[[ -f $cargo_env_path ]] && source $cargo_env_path
