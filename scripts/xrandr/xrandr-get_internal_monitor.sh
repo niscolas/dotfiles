@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-$HOME/scripts/xrandr/xrandr-get_monitor.sh eDP
+"$SCRIPTS_DIR/xrandr/xrandr-get_monitor.sh" eDP

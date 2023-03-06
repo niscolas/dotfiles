@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 layout=$(setxkbmap -query | grep layout: | awk '{ print $2 }')
 

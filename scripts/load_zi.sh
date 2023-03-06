@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 zi_home_path="$ZI_HOME/bin/zi.zsh"
 if [ -f  $zi_home_path ]; then

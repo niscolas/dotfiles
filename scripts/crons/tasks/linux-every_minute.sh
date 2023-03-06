@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-source "$HOME/scripts/git-utils.sh"
+source "$SCRIPTS_DIR/git-utils.sh"
 
 REPOS=(
   "$HOME/neorg"
