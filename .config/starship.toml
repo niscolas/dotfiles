@@ -1,22 +1,60 @@
 "$schema" = 'https://starship.rs/config-schema.json'
-format = "$all\n$character"
+
+format = """
+$username$directory$git_branch$git_status\
+[](fg:#D3869B)[$all](fg:#32302f bg:#d3869b bold)[](fg:#D3869B) \
+$time\
+\n$os$character
+"""
 
 [character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[✗](bold red)"
+success_symbol = "[ ](bold #B8BB26)"
+error_symbol = "[ ](bold #FB4934)"
 
 [directory]
-style = "blue"
+format = "[](fg:#8EC07C)[ $path](fg:#32302f bg:#8EC07C bold)[](fg:#8EC07C) "
+truncation_length = 3
+truncation_symbol = "…/"
 
 [git_branch]
+format = "[](fg:#FABD2F)[](fg:#32302F bg:#FABD2F bold)[](fg:#FABD2F bg:#32302F)[ $branch](fg:#FABD2F bg:#32302F bold)"
 symbol = ""
 
-[line_break]
-disabled=true
+[git_status]
+format = "[ $all_status$ahead_behind](fg:#FABD2F bg:#32302F)[](fg:#32302F)"
+# conflicted = "🏳"
+ahead = " "
+# behind = "😰"
+# diverged = "😵"
+up_to_date = ""
+# untracked = "🤷"
+stashed = "󰀼 "
+modified = "󰷈 "
+# staged = '[++\($count\)](green)'
+# renamed = "👅"
+# deleted = "🗑"
 
-[nodejs]
-format = "via [⬢ $version](bold green) "
+[line_break]
+disabled = true
+
+[lua]
+format = "$symbol $version"
+symbol = ""
+
+[os]
+format = "[](fg:#83A598)[$symbol](fg:#32302f bg:#83A598 bold)[](fg:#83A598)"
+disabled = false
+
+[os.symbols]
+Arch = " "
 
 [time]
 disabled = false
-style = "green"
+time_format = "%R" # Hour:Minute Format
+style = "fg:#32302F bg:#B8BB26 bold"
+format = "[](fg:#B8BB26)[ $time]($style)[](fg:#B8BB26)"
+
+[username]
+show_always = false
+format = "$user"
+disabled = true
