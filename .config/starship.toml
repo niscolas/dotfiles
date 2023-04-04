@@ -2,37 +2,67 @@
 
 format = """
 $username$directory$git_branch$git_status\
-[](fg:#D3869B)[$all](fg:#32302f bg:#d3869b bold)[](fg:#D3869B) \
-$time\
+[](purple)[$all](fg:dark_soft bg:purple bold)[](fg:purple) \
+$cmd_duration\
 \n$os$character
 """
 
+palette = "gruvbox"
+
+[palettes.gruvbox]
+dark_soft = "#32302f"
+red = "#FB4934"
+green = "#B8BB26"
+yellow = "#FABD2F"
+blue = "#83A598"
+purple = "#D3869B"
+aqua = "#8EC07C"
+orange = "#FE8019"
+neutral_red = "#CC241D"
+neutral_green = "#98971A"
+neutral_yellow = "#D79921"
+neutral_blue = "#458588"
+neutral_purple = "#B16286"
+neutral_aqua = "#689D6A"
+neutral_orange = "#D65D0E"
+faded_red = "#9D0006"
+faded_green = "#79740E"
+faded_yellow = "#B57614"
+faded_blue = "#076678"
+faded_purple = "#8F3F71"
+faded_aqua = "#427B58"
+faded_orange = "#AF3A03"
+
 [character]
-success_symbol = "[ ](bold #B8BB26)"
-error_symbol = "[ ](bold #FB4934)"
+success_symbol = "[ ](green bold)"
+error_symbol = "[ ](red bold)"
+
+[cmd_duration]
+min_time = 500
+format = "[](green)[ $duration](fg:dark_soft bg:green bold)[](green)"
 
 [directory]
-format = "[](fg:#8EC07C)[ $path](fg:#32302f bg:#8EC07C bold)[](fg:#8EC07C) "
+format = "[](aqua)[ $path](fg:dark_soft bg:aqua bold)[](aqua) "
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
-format = "[](fg:#FABD2F)[](fg:#32302F bg:#FABD2F bold)[](fg:#FABD2F bg:#32302F)[ $branch](fg:#FABD2F bg:#32302F bold)"
+format = "[](yellow)[](fg:dark_soft bg:yellow bold)[](fg:yellow bg:dark_soft)[ $branch](fg:yellow bg:dark_soft bold)"
 symbol = ""
 
 [git_status]
-format = "[ $all_status$ahead_behind](fg:#FABD2F bg:#32302F)[](fg:#32302F)"
-# conflicted = "🏳"
-ahead = " "
-# behind = "😰"
-# diverged = "😵"
+format = "[ $all_status$ahead_behind](fg:yellow bg:dark_soft)[](dark_soft) "
+conflicted = "󱓌 "
+ahead = " "
+behind = " "
+diverged = "󰦾 "
 up_to_date = ""
-# untracked = "🤷"
+untracked = "󰨹 "
 stashed = "󰀼 "
 modified = "󰷈 "
-# staged = '[++\($count\)](green)'
-# renamed = "👅"
-# deleted = "🗑"
+staged = '\( $count\)'
+renamed = "󰑕 "
+deleted = "󰚃 "
 
 [line_break]
 disabled = true
@@ -41,18 +71,30 @@ disabled = true
 format = "$symbol $version"
 symbol = ""
 
+[nodejs]
+symbol = " "
+format = "$symbol$version "
+
 [os]
-format = "[](fg:#83A598)[$symbol](fg:#32302f bg:#83A598 bold)[](fg:#83A598)"
+format = "[](blue)[$symbol](fg:dark_soft bg:blue bold)[](blue)"
 disabled = false
 
 [os.symbols]
 Arch = " "
 
+[package]
+format = "$symbol$version "
+symbol = "󰏗 "
+
+[rust]
+format = "$symbol$version "
+symbol = " "
+
 [time]
-disabled = false
+disabled = true
 time_format = "%R" # Hour:Minute Format
-style = "fg:#32302F bg:#B8BB26 bold"
-format = "[](fg:#B8BB26)[ $time]($style)[](fg:#B8BB26)"
+style = "fg:dark_soft bg:green bold"
+format = "[](green)[ $time]($style)[](green)"
 
 [username]
 show_always = false
