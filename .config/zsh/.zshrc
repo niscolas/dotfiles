@@ -5,19 +5,24 @@ eval "$(zoxide init zsh)"
 ## aliases
 alias b="buku --suggest"
 alias bo="buku_open.sh"
+alias cargo="RUSTC_WRAPPER=sccache cargo"
 alias cat="bat"
 alias cd="z"
 alias clip="xclip -selection clipboard"
 alias dot="git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 alias ext="extract_file.sh"
 alias g="git"
-alias l="exa -aghHl@ --group-directories-first --icons --color always"
-alias lt="l -T"
 alias nvim="$NVIM_EXEC"
 alias n="nvim"
 alias r=". ranger"
 alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
 alias x="xplr"
+# exa
+exa_default="exa -a --group-directories-first --icons --color always"
+alias l="$exa_default -1"
+alias ls="$exa_default"
+alias ld="$exa_default -aghHl@"
+alias lt="$exa_default -T"
 
 ## settings
 # https://stackoverflow.com/a/24237590/16589245
@@ -27,3 +32,5 @@ bindkey -v
 
 source "$SCRIPTS_DIR/load_starship.sh"
 source "$SCRIPTS_DIR/sdkman.sh"
+
+source /home/niscolas/.config/broot/launcher/bash/br
