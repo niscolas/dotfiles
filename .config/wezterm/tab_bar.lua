@@ -26,7 +26,7 @@ M.setup = function(color_scheme)
 		title = string.sub(title, string.find(title, "/"), string.len(title))
 
 		if home_dir then
-			title = string.gsub(title, home_dir, "$HOME")
+			title = string.gsub(title, home_dir, "~")
 		end
 
 		return title
