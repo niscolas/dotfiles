@@ -1,8 +1,9 @@
 [alias]
     a = add -A
-    ca = commit --amend --no-edit
     ch = checkout
-    cm = commit -m
+    cm = commit
+    cma = commit --amend --no-edit
+    cmm = commit -m
     s = status -sb
     sm = submodule
     sr = submodule foreach git s
