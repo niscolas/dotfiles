@@ -2,16 +2,17 @@
 
 name="bspwm"
 
+export SCRIPTS_DIR="$HOME/scripts"
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # colorscheme {{{
-bspc config focused_border_color "#FABD2F"
-bspc config normal_border_color "#32302F"
+theme_path="$HOME/.config/bspwm/themes/$NISCOLAS_THEME"
+[[ -f "$theme_path" ]] && "$theme_path"
 # }}}
 
 # window behavior {{{
 bspc config border_width 4
-bspc config window_gap 12
+bspc config window_gap 16
 bspc config split_ratio 0.52
 # }}}
 
@@ -32,19 +33,18 @@ wired &
 xsetroot -cursor_name left_ptr &
 blueman-applet &
 dex --autostart --environment bspwm &
-dunst &
 nm-applet &
-picom &
+picom --experimental-backends &
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 xss-lock --transfer-sleep-lock -- i3lock --nofork &
 lxsession &
+syncthing &
 # }}}
 
 "$SCRIPTS_DIR/notify_script_start.sh" "$name"
 
-export SCRIPTS_DIR="$HOME/scripts"
-"$SCRIPTS_DIR/bspwm/bspwm-monitor_setup.sh"
+"$SCRIPTS_DIR/bspwm/bspwm-auto_monitor_setup.sh"
 "$SCRIPTS_DIR/bspwm/bspwm-common_setup.sh"
 
 "$SCRIPTS_DIR/notify_script_success.sh" "$name"
