@@ -48,3 +48,7 @@
     trustExitCode = false
     cmd = $UNITY_EDITOR/Editor/Data/Tools/UnityYAMLMerge.exe merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
 
+[http]
+	postBuffer = 2097152000
+[sendpack]
+	sideband = false
