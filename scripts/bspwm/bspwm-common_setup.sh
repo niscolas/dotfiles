@@ -7,7 +7,5 @@ setxkbmap us
 setxkbmap -option "compose:menu"
 
 "$HOME/.config/polybar/launch.sh"
-
-feh --no-fehbg --bg-scale "$HOME/Pictures/wallpapers/gruvbox_skull.webp"
-
+"$SCRIPTS_DIR/feh-default_background.sh"
 "$SCRIPTS_DIR/notify_script_success.sh" "$name"
