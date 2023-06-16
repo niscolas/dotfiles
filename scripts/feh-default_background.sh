@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-feh --no-fehbg --bg-scale "$HOME/Pictures/wallpapers/wall-02.webp"
+feh --no-fehbg --bg-scale "$HOME/_vault/wallpapers/static/gruvbox_skull-1920x1080.webp"
