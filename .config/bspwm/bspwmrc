@@ -32,7 +32,6 @@ bspc config single_monocle false
 wired &
 xsetroot -cursor_name left_ptr &
 blueman-applet &
-dex --autostart --environment bspwm &
 nm-applet &
 picom --experimental-backends &
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
@@ -46,6 +45,8 @@ syncthing &
 
 "$SCRIPTS_DIR/bspwm/bspwm-auto_monitor_setup.sh"
 "$SCRIPTS_DIR/bspwm/bspwm-common_setup.sh"
+
+dex --autostart --environment bspwm &
 
 "$SCRIPTS_DIR/notify_script_success.sh" "$name"
 
