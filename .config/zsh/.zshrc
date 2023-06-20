@@ -1,4 +1,5 @@
 source "$SCRIPTS_DIR/load_zi.sh"
+source "$SCRIPTS_DIR/export_nvim_exec.sh"
 
 eval "$(zoxide init zsh)"
 
@@ -32,5 +33,6 @@ bindkey -v
 
 source "$SCRIPTS_DIR/load_starship.sh"
 source "$SCRIPTS_DIR/sdkman.sh"
+source "$SCRIPTS_DIR/unreal.sh"
 
 source /home/niscolas/.config/broot/launcher/bash/br

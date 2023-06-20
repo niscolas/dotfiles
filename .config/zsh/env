@@ -51,6 +51,7 @@ export ZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules,
 export ZI_HOME="$HOME/.zi"
 
 source "$ZDOTDIR/niscolas_loader.sh"
+[[ -f "$ZDOTDIR/env.secrets" ]] && source "$ZDOTDIR/env.secrets"
 source "$SCRIPTS_DIR/export_os_name.sh"
 source "$SCRIPTS_DIR/export_nvim_exec.sh"
 
