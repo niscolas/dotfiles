@@ -36,7 +36,7 @@
             params: NotificationBlock((
                 monitor: 0,
                 border_width: 4.0,
-                border_rounding: 12.0,
+                border_rounding: 10.0,
                 gap: (x: 0.0, y: 16.0),
                 background_color: (hex: "#282828"),
                 border_color: (hex: "#FABD2F"),
