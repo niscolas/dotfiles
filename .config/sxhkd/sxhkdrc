@@ -3,16 +3,16 @@
 #
 
 super + shift + comma
-        $HOME/scripts/keyboard/keyboard-swap_layout.sh
+        $SCRIPTS_DIR/keyboard/keyboard-swap_layout.sh
 
 # terminal emulator
 super + Return
-	kitty
+	wezterm
 
 # program launcher
 super + space
         $HOME/.config/rofi/launchers/type-3/launcher.sh
-        
+
 super + ctrl + p
         $HOME/.config/rofi/powermenu/type-2/powermenu.sh
 
@@ -26,6 +26,13 @@ super + ctrl + s
 super + Escape
 	notify-send "reload config files" && pkill -USR1 -x sxhkd
 
+super + shift + x
+	flameshot gui
+
+
+XF86Audio{Mute,RaiseVolume,LowerVolume}
+	amixer --nocheck set Master {toggle,5%+,5%-}
+
 #
 # bspwm hotkeys
 #
@@ -33,6 +40,10 @@ super + Escape
 # quit/restart bspwm
 super + shift + r
 	bspc wm -r
+
+# reload monitor setup
+super + shift + m
+	$SCRIPTS_DIR/bspwm/bspwm-full_auto_monitor_setup.sh
 
 # close and kill
 super + {_,shift + }q
