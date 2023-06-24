@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+tail -F $HOME/.cache/awesome_eww_workspaces.log
