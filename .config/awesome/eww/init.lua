@@ -1,4 +1,6 @@
 local awful = require("awful")
+local naughty = require("naughty")
+local pl = require("pl.import_into")()
 
 local function on_tag_changed()
     local cache_dir = os.getenv("XDG_CACHE_HOME")
@@ -10,7 +12,8 @@ local function on_tag_changed()
         return
     end
 
-    local empty_icon = ""
+    local not_focused_icon = ""
+    local focused_icon = ""
 
     local log = "(box "
         .. ':class "works" '
@@ -20,14 +23,30 @@ local function on_tag_changed()
 
     local tags = awful.screen.focused().tags
     for _, t in ipairs(tags) do
+        local workspace_icon = not_focused_icon
+        local classes = "workspace "
+
+        if #t:clients() > 0 then
+            classes = classes .. "workspace-occupied "
+        else
+            classes = classes .. "workspace-unoccupied "
+        end
+
+        local is_focused = pl.tablex.find(
+            awful.screen.focused().selected_tags,
+            t
+        ) ~= nil
+
+        if is_focused then
+            classes = classes .. "workspace-focused "
+            workspace_icon = focused_icon
+        end
+
         log = log
             .. "(button "
-            .. ":onclick "
-            .. '"notify-send '
-            .. t.name
-            .. '" "'
-            .. empty_icon
-            .. '" ) '
+            .. string.format(":onclick 'notify-send %s' ", t.name)
+            .. string.format(":class '%s' ", classes)
+            .. string.format("'%s' ) ", workspace_icon)
     end
 
     log = log .. ")\n"
