@@ -16,9 +16,9 @@
 (defvar music_reveal false)
 (defvar wifi_rev false)
 (defvar time_rev false)
-(deflisten workspace `tail -F $HOME/.cache/awesome_eww_workspaces.log`)
+(deflisten workspace "~/.config/eww/bar/scripts/workspaces")
 
-(defvar eww "$HOME/.local/bin/eww/eww -c $HOME/.config/eww/bar")
+(defvar eww "eww -c ~/.config/eww/bar")
 
 
 (defpoll COL_WLAN :interval "1m" "~/.config/eww/bar/scripts/wifi --COL")
