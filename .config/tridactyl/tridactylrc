@@ -169,9 +169,12 @@
 
 command reloadconfig source ~/.config/tridactyl/tridactylrc
 
-bindurl web.whatsapp.com  --mode=input <Escape> composite fillcmdline ; ex.hide_and_clear
-bindurl web.whatsapp.com  --mode=insert <Escape> composite fillcmdline ; ex.hide_and_clear
-bindurl web.whatsapp.com  --mode=normal <Enter> focusinput 2
+bindurl web.whatsapp.com --mode=input <Escape> composite fillcmdline ; ex.hide_and_clear
+bindurl web.whatsapp.com --mode=insert <Escape> composite fillcmdline ; ex.hide_and_clear
+bindurl web.whatsapp.com --mode=normal <Enter> focusinput 2
 
-" " For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
+bindurl music.youtube.com --mode=normal ;l hint -c #button-shape-like>button, #button-shape-dislike>button
+
+bindurl chat.openai.com --mode-normal <Enter> focusinput
+
 " " vim: set filetype=tridactyl
