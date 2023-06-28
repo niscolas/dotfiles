@@ -645,7 +645,12 @@ awful.rules.rules = {
     },
 
     {
-        rule = { class = "Hidamari" },
+        rule_any = {
+            class = {
+                "Hidamari",
+                "eww-bar",
+            },
+        },
         properties = {
             border_width = 0,
             buttons = {},
@@ -656,13 +661,37 @@ awful.rules.rules = {
     },
 
     {
-        rule = { class = "eww-bar" },
+        rule = { class = "discord" },
         properties = {
-            border_width = 0,
-            buttons = {},
-            focusable = false, -- Prevent the client from receiving focus
-            raise = false, -- Prevent the client from being raised above other windows
-            sticky = true,
+            tag = "2",
+        },
+    },
+
+    {
+        rule = { class = "firefox" },
+        properties = {
+            tag = "3",
+        },
+    },
+
+    {
+        rule = { class = "logseq" },
+        properties = {
+            tag = "4",
+        },
+    },
+
+    {
+        rule_any = {
+            class = {
+                "pavucontrol",
+                "pritunl",
+                "com-azefsw-audioconnect-desktop-app-MainKt",
+                "cpupower-gui",
+            },
+        },
+        properties = {
+            tag = "9",
         },
     },
 }
