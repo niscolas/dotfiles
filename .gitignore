@@ -1,5 +1,6 @@
 .config/gh/hosts.yml
 .config/git/credentials
+.config/ludusavi/*.log
 .config/wakatime
 .config/zsh/.cache
 .config/zsh/.zcompdump

@@ -1,0 +1,75 @@
+---
+version:
+  - 0
+  - 19
+  - 0
+migrations:
+  adopted_cache: true
+  fixed_spanish_config: true
+manifests:
+  "https://raw.githubusercontent.com/mtkennerly/ludusavi-manifest/master/data/manifest.yaml":
+    etag: "W/\"f92b00137b44b5cb5389128c31ec3553427585db255827c02acc72f62a5b91b7\""
+    checked: "2023-06-28T01:56:17.798843083Z"
+    updated: "2023-06-28T01:56:17.798843083Z"
+roots:
+  - path: /home/niscolas/.config/heroic
+    store: heroic
+  - path: /home/niscolas/.config/lutris
+    store: lutris
+  - path: /home/niscolas/.local/share/Steam
+    store: steam
+  - path: /home/niscolas/.var/app/com.valvesoftware.Steam/.local/share/Steam
+    store: steam
+backup:
+  recent_games:
+    - Apex Legends
+    - Barotrauma
+    - Bloons TD 6
+    - Borderlands 3
+    - "Borderlands: The Pre-Sequel"
+    - Crawl
+    - Crypt of the NecroDancer
+    - Darkest Dungeon
+    - Deep Rock Galactic
+    - Dishonored 2
+    - "Don't Starve Together"
+    - Doom (2016)
+    - Elden Ring
+    - Enter the Gungeon
+    - Full Metal Furies
+    - Hades
+    - Heave Ho
+    - Helldivers
+    - Hollow Knight
+    - Resident Evil Village
+    - Risk of Rain 2
+    - Rocket League
+    - Rogue Legacy 2
+    - Sifu
+    - "Stick Fight: The Game"
+    - Streets of Rogue
+    - Sundered
+    - Super Cane Magic ZERO
+    - "The Witcher 3: Wild Hunt"
+    - "Tiny Tina's Wonderlands"
+    - Vagante
+    - Wizard of Legend
+restore:
+  recent_games:
+    - Blasphemous
+    - Bloons TD 6
+    - "Borderlands: The Pre-Sequel"
+    - Crawl
+    - Crypt of the NecroDancer
+    - Darkest Dungeon
+    - ELDEN RING
+    - Enter the Gungeon
+    - Helldivers
+    - Hollow Knight
+    - Resident Evil Village
+    - Risk of Rain 2
+    - Rocket League
+    - Sifu
+    - Sundered
+    - "Tiny Tina's Wonderlands"
+    - Wizard of Legend

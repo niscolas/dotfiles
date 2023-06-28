@@ -1,0 +1,70 @@
+---
+runtime:
+  threads: ~
+manifest:
+  url: "https://raw.githubusercontent.com/mtkennerly/ludusavi-manifest/master/data/manifest.yaml"
+language: en-US
+theme: dark
+roots:
+  - path: /home/niscolas/.local/share/Steam
+    store: steam
+  - path: /home/niscolas/.var/app/com.valvesoftware.Steam/.local/share/Steam
+    store: steam
+  - path: /home/niscolas/.config/heroic
+    store: heroic
+  - path: /home/niscolas/.config/lutris
+    store: lutris
+  - path: /mnt/storage/SteamLibrary
+    store: steam
+redirects: []
+backup:
+  path: /home/niscolas/_vault/ludusavi
+  ignoredGames: []
+  filter:
+    excludeStoreScreenshots: false
+    ignoredPaths: []
+    ignoredRegistry: []
+  toggledPaths: {}
+  toggledRegistry: {}
+  sort:
+    key: name
+    reversed: true
+  retention:
+    full: 1
+    differential: 0
+  format:
+    chosen: simple
+    zip:
+      compression: deflate
+    compression:
+      deflate:
+        level: 6
+      bzip2:
+        level: 6
+      zstd:
+        level: 10
+restore:
+  path: /home/niscolas/_vault/ludusavi
+  ignoredGames: []
+  sort:
+    key: status
+    reversed: false
+scan:
+  showDeselectedGames: true
+  showUnchangedGames: true
+  showUnscannedGames: true
+cloud:
+  remote:
+    GoogleDrive:
+      id: ludusavi-1686790409
+  path: my_game_my_rules/saves-ludusavi
+  synchronize: true
+apps:
+  rclone:
+    path: /usr/bin/rclone
+    arguments: ""
+customGames:
+  - name: Elden Ring
+    files:
+      - "<winAppData>/EldenRing"
+    registry: []
