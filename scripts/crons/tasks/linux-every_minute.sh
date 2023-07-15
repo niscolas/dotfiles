@@ -1,12 +1,11 @@
-#!/usr/bin/env bash
+#! /usr/bin/env bash
 
 source "$HOME/scripts/git-utils.sh"
 
 REPOS=(
-  "$HOME/neorg"
-  "$HOME/buku-bookmarks"
-  "$HOME/_vault/logseq"
+  # "$HOME/bonfire/neorg"
+  # "$HOME/bonfire/buku-bookmarks"
+  "$HOME/bonfire/logseq"
 )
 
 handle_repos ${REPOS[@]}
-

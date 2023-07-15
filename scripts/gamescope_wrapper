@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+gamescope -f -r 144 -h 1080 -- env MANGOHUD=1 mangohud "$@"

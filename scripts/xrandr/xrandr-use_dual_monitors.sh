@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env nushell
 
-internal_monitor=$("$SCRIPTS_DIR/xrandr/xrandr-get_internal_monitor.sh")
-hdmi_monitor=$("$SCRIPTS_DIR/xrandr/xrandr-get_hdmi_monitor.sh")
+internal_monitor=$("$XDG_BIN_HOME/xrandr/xrandr-get_internal_monitor.sh")
+hdmi_monitor=$("$XDG_BIN_HOME/xrandr/xrandr-get_hdmi_monitor.sh")
 
 if [[ -z "$hdmi_monitor" || -z "$internal_monitor" ]]; then
     exit

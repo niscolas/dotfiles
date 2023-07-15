@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#! /usr/bin/env bash
 
 count_repo_changes () {
     git -C $1 status --porcelain | wc -l
@@ -46,4 +46,3 @@ handle_repos() {
       fi
   done
 }
-
