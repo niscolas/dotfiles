@@ -11,6 +11,8 @@ local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 
+local command_executed = false
+
 _G.spawn = awful.spawn
 _G.shell = spawn.with_shell
 
@@ -428,11 +430,11 @@ globalkeys = gears.table.join(
     end, { description = "lua execute prompt", group = "awesome" }),
 
     awful.key({ modkey }, "space", function()
-        shell("$HOME/.config/rofi/launchers/type-3/launcher.sh")
+        shell("~/.config/rofi/launchers/type-3/launcher.sh")
     end, { description = "show the app launcher", group = "launcher" }),
 
     awful.key({ modkey, "Shift" }, "p", function()
-        shell("$HOME/.config/rofi/powermenu/type-2/powermenu.sh")
+        shell("~/.config/rofi/powermenu/type-2/powermenu.sh")
     end, { description = "show the power menu", group = "launcher" }),
 
     awful.key({ modkey, "Shift" }, "x", function()
@@ -440,7 +442,7 @@ globalkeys = gears.table.join(
     end, { description = "show flameshot", group = "launcher" }),
 
     awful.key({ modkey, "Shift" }, ",", function()
-        shell("$SCRIPTS_DIR/keyboard/keyboard-swap_layout.sh")
+        shell("keyboard-swap_layout.sh")
     end, { description = "swap keyboard layout", group = "launcher" }),
 
     awful.key({ modkey }, "z", function()
@@ -682,12 +684,21 @@ awful.rules.rules = {
     },
 
     {
+        rule = {
+            class = "com-azefsw-audioconnect-desktop-app-MainKt",
+        },
+        properties = {
+            tag = "8",
+        },
+    },
+
+    {
         rule_any = {
             class = {
+                "cpupower-gui",
+                "easyeffects",
                 "pavucontrol",
                 "pritunl",
-                "com-azefsw-audioconnect-desktop-app-MainKt",
-                "cpupower-gui",
             },
         },
         properties = {
@@ -766,22 +777,32 @@ end)
 client.connect_signal("unfocus", function(c)
     c.border_color = beautiful.border_normal
 end)
+
+client.connect_signal("x::reload", function()
+    -- Reset the flag when reloading the configuration
+    command_executed = false
+end)
 -- }}}
 
-spawn("blueman-applet")
-spawn("nm-applet")
+shell("nm-applet")
+shell("xfce4-power-manager")
+shell("syncthing -no-browser")
 
 -- xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 -- screen before suspend. Use loginctl lock-session to lock your screen.
-shell("xss-lock --transfer-sleep-lock -- i3lock --nofork")
-shell("lxsession")
-
-shell("syncthing -no-browser")
+-- shell("xss-lock --transfer-sleep-lock -- i3lock --nofork")
+-- shell("lxsession")
+shell("light-locker")
 
 shell("killall hidamari-server")
 spawn("hidamari --background")
 
-shell("picom --experimental-backends")
+shell("picom")
+if not command_executed then
+    shell("xrandr-util.nu auto")
+    command_executed = true
+end
+spawn("easyeffects")
 
 shell("setxkbmap us")
 shell('setxkbmap -option "compose:menu"')
