@@ -1,24 +1,21 @@
 ---
-version:
-  - 0
-  - 19
-  - 0
 migrations:
   adopted_cache: true
-  fixed_spanish_config: true
 manifests:
   "https://raw.githubusercontent.com/mtkennerly/ludusavi-manifest/master/data/manifest.yaml":
-    etag: "W/\"f92b00137b44b5cb5389128c31ec3553427585db255827c02acc72f62a5b91b7\""
-    checked: "2023-06-28T01:56:17.798843083Z"
-    updated: "2023-06-28T01:56:17.798843083Z"
+    etag: "W/\"d120f01cae042f91d2a9f8c897804a84e886779e23fc2635bca1144c759005fa\""
+    checked: "2023-06-29T06:06:05.648037606Z"
+    updated: "2023-06-29T06:06:05.648037606Z"
 roots:
   - path: /home/niscolas/.config/heroic
     store: heroic
   - path: /home/niscolas/.config/lutris
-    store: lutris
+    store: other
   - path: /home/niscolas/.local/share/Steam
     store: steam
   - path: /home/niscolas/.var/app/com.valvesoftware.Steam/.local/share/Steam
+    store: steam
+  - path: /run/media/niscolas/linux_storage/SteamLibrary
     store: steam
 backup:
   recent_games:
