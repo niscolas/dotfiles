@@ -1,5 +1,7 @@
 # 🌲 Welcome to my .dotfiles 🌲
 
+## ⚠️ Archived in favor of [my Nix based config - nyx](https://github.com/niscolas/nyx/tree/main)
+
 These are my `Linux` (probably works on `MacOS` too) .dotfiles 
 
 ## 💭 Inspiration
